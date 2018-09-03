@@ -1,30 +1,33 @@
-#include <iostream.h> 
+#include <iostream>
+#include <iterator>
 
-void swap(int xp, int yp) {  
-    int temp = xp;
-    xp = yp;
-    yp = temp;
+void swap(int& xp, int& yp) {
+   int temp = xp;
+   xp = yp;
+   yp = temp;
 }
 
-void selectionSort(const int arr[], int n) {  
-    for (int i = 0, int min_indice = i; i < n - 1; ++i) {
-        for (int j = i + 1; j < n; j++)
-          if (arr[j] < arr[min_idx]) {
-            min_indice = j;
-        }  
-        swap(min_indice, i);  
-    }
+void selectionSort(int arr[], int size) {
+   for (int i = 0; i < size; i++) {
+       int min_indice = i;
+       for (int validate_min_indice = i + 1; validate_min_indice < size; validate_min_indice++) {
+         if (arr[validate_min_indice] < arr[min_indice]) {
+           swap(arr[min_indice], arr[validate_min_indice]);
+         }
+       }
+   }
 }
 
-void printArray(int arr[], int& size) { 
-    for (int i = 0, i <= size - 1, i++) {  
-        cout << arr[i] << endl;  
-    }
+void printArray(int arr[], int size) {
+   for (int i = 0; i < size; i++) {
+       std::cout << arr[i] << std::endl;
+   }
 }
 
 int main() {
-    int arr[] = {64, 25, 12, 22, 11};
-    selectionSort(arr, 5);  
-    printArray(arr, 5);
-    return 0;
+   int arr[] = {64, 25, 12, 22, 11};
+   size_t arr_size = sizeof(arr)/sizeof(arr[0]);
+   selectionSort(arr, arr_size);
+   printArray(arr, arr_size);
+   return 0;
 }
