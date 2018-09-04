@@ -1,4 +1,4 @@
-# Complex Number
+# List of exercises 1
 > Fix given functions.
 
 ### Contributors
