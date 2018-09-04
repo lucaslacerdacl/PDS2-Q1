@@ -8,10 +8,10 @@ void swap(int& xp, int& yp) {
 
 void selectionSort(int arr[], int size) {
    for (int i = 0; i < size; i++) {
-       int min_indice = i;
-       for (int validate_min_indice = i + 1; validate_min_indice < size; validate_min_indice++) {
-         if (arr[validate_min_indice] < arr[min_indice]) {
-           swap(arr[min_indice], arr[validate_min_indice]);
+       int min_index = i;
+       for (int validate_min_index = i + 1; validate_min_index < size; validate_min_index++) {
+         if (arr[validate_min_index] < arr[min_index]) {
+           swap(arr[min_index], arr[validate_min_index]);
          }
        }
    }
